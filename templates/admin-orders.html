@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals Reserved</title>
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/admin-add-meal.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/admin-orders.css')}}">
+    <!--<link rel="stylesheet" href="css/admin-add-meal.css">
+        <link rel="stylesheet" href="css/admin-orders.css">-->
+</head>
+
+<body>
+
+    <!-- Start Header -->
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/logo.webp')}}">
+                <span>FoodEat</span>
+            </div>
+            <h1>Meals Reserved</h1>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <!-- End Header -->
+
+    <!-- Start Meals Reserved -->
+
+    <div class="meal-res">
+        {% for order in orders %}
+        <div class="image">
+            <img src="{{order.meal.photo_URL}}">
+        </div>
+        <p>{{order.meal.name}} </p>
+        <p>{{order.meal.description}}</p>
+        <p>{{order.meal.price}}</p>
+        <p>{{order.customer_name}}</p>
+        <p>{{order.customer_address}}</p>
+        {% endfor %}
+    </div>
+
+    <!-- End  Meals Reserved -->
+
+    <!--
+        <div class="meals-res">
+            <div class="container">
+                <div class="reserved">
+                    <div class="image">
+                        <img src="{{url_for('static',filename='images/meal1.webp')}}" alt="Burger">
+                        <ul>
+                            <li><span>Meal Name: </span>Burgar</li>
+                            <li><span>Customer Name: </span> Bayan Radaideh</li>
+                            <li><span>Customer Mobile: </span> 0799999999</li>
+                            <li><span>Customer Address: </span> Amman</li>
+                            <li><span>Email: </span>bayanmradaideh@gmail.com</li>
+                        </ul>
+                    </div>
+
+                    <div class="image">
+                        <img src="{{url_for('static',filename='images/meal2.webp')}}" alt="Chicken">
+                        <ul>
+                            <li><span>Meal Name: </span>Chicken</li>
+                            <li><span>Customer Name: </span> Bayan Radaideh</li>
+                            <li><span>Customer Mobile: </span> 0799999999</li>
+                            <li><span>Customer Address: </span> Amman</li>
+                            <li><span>Email: </span>bayanmradaideh@gmail.com</li>
+                        </ul>
+                    </div>
+
+                    <div class="image">
+                            <img src="{{url_for('static',filename='images/meal3.webp')}}"  alt="Grilled Chicken">
+                            <ul>
+                                <li><span>Meal Name: </span> Grilled Chicken</li>
+                                <li><span>Customer Name: </span> Bayan Radaideh</li>
+                                <li><span>Customer Mobile: </span> 0799999999</li>
+                                <li><span>Customer Address: </span> Amman</li>
+                                <li><span>Email: </span>bayanmradaideh@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                </div>
+            </div>
+        </div> -->
+
+    <!-- Start Footer -->
+
+    <footer>
+        <div class="container">
+            <p>2019 &copy; FoodEat. All Rights Reserved. Designed And Coded By Coding Team For <span>Coretabs</span>
+                Competition</p>
+            <ul class="links">
+                <li><i class="fab fa-facebook-square fa-2x"></i></li>
+                <li><i class="fab fa-twitter-square fa-2x"></i></li>
+                <li><i class="fab fa-linkedin fa-2x"></i></li>
+                <li><i class="fab fa-google-plus-square fa-2x"></i></li>
+                <li><i class="fas fa-phone-square fa-2x"></i></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+    <script src="{{url_for('static',filename='js/jquery3.4.1.js')}}"></script>
+    <script src="{{url_for('static',filename='js/admin orders.js')}}"></script>
+</body>
+
+</html>

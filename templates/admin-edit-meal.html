@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Meal</title>
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/admin-add-meal.css') }}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/admin-add-meal.css">-->
+</head>
+
+<body>
+    <!-- Start Header -->
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/logo.webp')}}">
+                <span>FoodEat</span>
+            </div>
+            <h1>Add New Meal</h1>
+        </div>
+    </header>
+
+    <!-- End Header -->
+
+    <!-- Start Adding New Meal -->
+
+    <div class="add-food">
+        <div class="container">
+            <div class="image">
+                <img src="{{url_for('static',filename='images/add-meal.webp')}}">
+            </div>
+            <form name="Add Meal" method="POST">
+                <input name="name" type="text" placeholder="Meal Name" maxlength="30" value="{{ meal.name }}" required>
+
+                <input name="description" type="text" placeholder="Description" value="{{ meal.description }}"
+                    maxlength="40" required>
+
+                <input name="price" type="number" placeholder="Price" min="0" max="500" value="{{ meal.price }}"
+                    required>
+
+                <input name="image" type="url" placeholder="Image URL" value="{{ meal.image }}" required>
+
+                <button type="submit">Update</button>
+                <button id="back-home">Back Home</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- End Adding New Meal -->
+
+    <!-- Start Footer -->
+
+    <footer>
+        <div class="container">
+            <p>2019 &copy; FoodEat. All Rights Reserved. Designed And Coded By Coding Team For <span>Coretabs</span>
+                Competition</p>
+            <ul class="links">
+                <li><i class="fab fa-facebook-square fa-2x"></i></li>
+                <li><i class="fab fa-twitter-square fa-2x"></i></li>
+                <li><i class="fab fa-linkedin fa-2x"></i></li>
+                <li><i class="fab fa-google-plus-square fa-2x"></i></li>
+                <li><i class="fas fa-phone-square fa-2x"></i></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <!-- End Footer -->
+    <script src="{{url_for('static',filename='js/jquery3.4.1.js')}}"></script>
+    <script src="{{url_for('static',filename='js/admin orders.js')}}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Meal</title>
+    <link href="{{ url_for('static', filename='normalize.css') }}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='admin-add-meal.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='user-show-meals.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/edit-meal.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/admin-add-meal.css">
+    <link rel="stylesheet" href="css/user-show-meals.css">
+    <link rel="stylesheet" href="css/edit-meal.css">-->
+</head>
+
+<body>
+    <!-- Start Header -->
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/logo.webp')}}">
+                <span>FoodEat</span>
+            </div>
+            <h1>Meals Reserved</h1>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <!-- End Header -->
+
+    <!-- Start Menu -->
+
+    <div class="menu" id="menu">
+        <div class="container">
+
+            <div class="back-add">
+                <a href="{{ url_for('admin_add_meal') }}">Add New Meal</a>
+            </div>
+
+            {% for meal in meals %}
+
+            <div class="meal">
+                <div class="image">
+                    <img src="{{ meal.image }}" alt="Burger">
+                    <ul>
+                        <li>{{ meal.name }}</li>
+                        <li>{{ meal.description }}</li>
+                        <li>{{ meal.price }}</li>
+                        <button class="edit"><a href="{{ url_for('admin_edit_meal', id = meal.id) }}">Edit</a></button>
+                        <button class="delete"><a
+                                href="{{ url_for('admin_delete_meal', id = meal.id) }}">Delete</a></button>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!-- End Menu -->
+
+
+
+    <!-- Start Footer -->
+
+    <footer id="contact">
+        <div class="container">
+            <p>2019 &copy; FoodEat. All Rights Reserved. Designed And Coded By Coding Team For <span>Coretabs</span>
+                Competition</p>
+            <ul class="links">
+                <li><i class="fab fa-facebook-square fa-2x"></i></li>
+                <li><i class="fab fa-twitter-square fa-2x"></i></li>
+                <li><i class="fab fa-linkedin fa-2x"></i></li>
+                <li><i class="fab fa-google-plus-square fa-2x"></i></li>
+                <li><i class="fas fa-phone-square fa-2x"></i></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+    <script src="{{url_for('static',filename='js/jquery3.4.1.js')}}"></script>
+    <script src="{{url_for('static',filename='js/admin orders.js')}}"></script>
+</body>

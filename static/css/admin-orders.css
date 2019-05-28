@@ -1,0 +1,45 @@
+/* Start Meals Reserved */
+
+.meals-res {
+    padding: 6% 0
+}
+
+.meals-res .reserved .image {
+    width: 33.3333%;
+    float: left;
+}
+
+.meals-res .reserved .image img {
+    width: 95%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+    
+}
+
+.meals-res  .reserved .image ul {
+    color: #333;
+    font-family: cursive,sans-serif;
+    margin-top: 1%
+}
+
+.meals-res .reserved .image ul li  {
+    padding: 10px 20px;
+    list-style: none;
+}
+
+.meals-res .reserved .image ul li:before{
+    content: " ";
+    display: inline-block;
+    border: 1px solid #ffb701;
+    width: 10px;
+    height: 10px;
+    border-radius: 0 10px 10px 0;
+    background: #ffb701;
+    margin-right: 2%
+}
+
+/* End Meals Reserved */
+
+.clearfix {
+    clear: both;
+}

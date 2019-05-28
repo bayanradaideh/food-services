@@ -1,0 +1,234 @@
+ul {
+    padding-left: 0;
+
+}
+
+/* Start Header */
+
+header .links {
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-family: cursive,sans-serif
+}
+
+header .links li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 3%;
+    padding: 3% 0; 
+}
+
+header .links li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.9);
+    
+}
+
+header .links li a:hover {
+    color: #ffb701;
+    border-bottom: 1px solid transparent
+}
+
+
+/* End Header */
+
+/* Start Slider */
+
+.slider {
+    background-image: url('../images/slider.webp');
+    height: 600px;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+.slider .intro {
+    text-align: center;
+    font-size: 1.5em;
+    background: rgba(30, 30, 30,0.4);
+    padding: 1% 0;
+    width: 50%;
+    margin: auto
+}
+
+.slider .intro h1 {
+    margin: 0;
+    font-family: "Brush Script MT", cursive;
+    color: #ffb701
+}
+
+.slider .intro p {
+    font-family: cursive,sans-serif;
+    color: rgba(255,255,255,0.9);
+}
+
+
+/* End Slider */
+
+/* Start Menu */
+
+.menu {
+    padding: 2% 0;
+}
+
+.menu h1 {
+    color: #ffb701;
+    font-family: "Brush Script MT", cursive;
+    text-align: center;
+    font-size: 3em;
+}
+
+.menu .meal .image {
+    width: 25%;
+    float: left;
+}
+
+.menu .meal .image img {
+    width: 95%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+    
+}
+
+.menu .meal .image ul {
+    color: #333;
+    font-family: cursive,sans-serif;
+    margin-top: 1%
+}
+
+.menu .meal .image ul li  {
+    padding: 10px 20px;
+    list-style: none;
+}
+
+.menu .meal .image ul li:before{
+    content: " ";
+    display: inline-block;
+    border: 1px solid #ffb701;
+    width: 10px;
+    height: 10px;
+    border-radius: 0 10px 10px 0;
+    background: #ffb701;
+    margin-right: 2%
+}
+
+.menu .meal .image ul button {
+    text-align: center;
+    padding: 2% 3%;
+    background-color: #ffb701;
+    color: #fff;
+    border: 1px solid #ffb701;
+    border-radius: 10px;
+    margin-top: 1%
+
+}
+
+.menu .meal .image ul button:hover {
+    cursor: pointer;
+    background: none;
+    color: #ffb701
+}
+
+.menu .meal .image ul button a {
+    text-decoration: none;
+    color: #333
+}
+/* End Menu */
+
+/* Start About */
+
+.about {
+    background-color: #f2f2f2;
+    padding: 2% 0;
+    color: #333
+}
+
+.about h1 {
+    color: #ffb701;
+    font-family: "Brush Script MT", cursive;
+    font-size: 3em;
+}
+
+.about .manager {
+    float: left;
+    width: 40%
+}
+
+.about .manager img {
+    width: 90%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.about .about-us {
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    padding-top: 3%
+}
+
+.about-us .feature {
+    width: 48%;
+    float: left;
+    margin-right: 2%;
+    margin-top: 2%
+}
+
+.about-us .feature .image {
+    width: 10%;
+    float: left;
+    margin-top: 5%;
+    margin-right: 5%
+}
+
+.about-us .feature .image i {
+    color: #ffb701
+}
+
+.about-us .feature .text {
+    width: 85%;
+    float: left;
+    font-family: cursive,sans-serif
+}
+
+.about-us .feature .text p {
+    line-height: 1.3;
+}
+
+/* End About */
+
+/* Start Clients */
+
+.clients {
+    text-align: center;
+    overflow: hidden;
+    padding: 2% 0
+}
+
+.clients h1 {
+    color: #ffb701;
+    font-family: "Brush Script MT", cursive;
+    font-size: 3em;
+    
+}
+
+.clients .client {
+    width: 31.333%;
+    float: left;
+    margin: 1%
+}
+
+.clients .client .image img {
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.clients .client p {
+    font-family: cursive,sans-serif;
+    color: #333
+}
+/* End Clients */
+
+.clearfix {
+    clear:both
+}

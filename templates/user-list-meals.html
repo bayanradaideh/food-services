@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Meals For User</title>
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/admin-add-meal.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/user-show-orders.css') }}" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/admin-add-meal.css">-->
+    <!--<link rel="stylesheet" href="css/user-show-meals.css">-->
+</head>
+
+<body>
+    <!-- Start Header -->
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/logo.webp')}}">
+                <!--<img src="images/logo.webp">-->
+                <span>FoodEat</span>
+            </div>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#client">Clients</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <!-- End Header -->
+
+    <!-- Start Slider -->
+
+    <div class="slider" id="home">
+        <div class="intro">
+            <div class="container">
+                <h1>Welcome </h1>
+                <p> Online Food Services</p>
+                <p>New Flavours</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Slider -->
+
+    <!-- Start Menu -->
+
+    <div class="menu" id="menu">
+        <div class="container">
+            <h1>Restuarant Menu</h1>
+            <div class="meal">
+
+                {% for meal in meals %}
+
+                <div class="image">
+                    <img src="{{ meal.image }}" alt="Burger">
+                    <ul>
+                        <li>{{ meal.name }}</li>
+                        <li>{{ meal.description }}</li>
+                        <li>{{ meal.price }}</li>
+                        <button class="order-button">
+                            <a href=" {{ url_for('fill_order', id=meal.id) }}">Order Now</a>
+                        </button>
+                    </ul>
+                </div>
+
+                {% endfor %}
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Menu -->
+
+    <!-- Start About-->
+
+    <div class="about" id="about">
+        <div class="container">
+            <div class="manager">
+                <img src="{{url_for('static',filename='images/manager.webp')}}">
+            </div>
+            <div class="about-us">
+                <h1>About Us</h1>
+
+                <div class="feature">
+                    <div class="image">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <div class="text">
+                        <h2>Professinal Manager &amp; Team </h2>
+                        <p>Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam,
+                            Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam
+                        </p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="image">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div>
+                    <div class="text">
+                        <h2>Accurate Appointments</h2>
+                        <p>Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam,
+                            Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="image">
+                        <i class="fas fa-dollar-sign fa-2x"></i>
+                    </div>
+                    <div class="text">
+                        <h2>Appropriate Prices</h2>
+                        <p>Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam,
+                            Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="image">
+                        <i class="fas fa-pepper-hot fa-2x"></i>
+                    </div>
+                    <div class="text">
+                        <h2>Spicy Meals &amp; Multiple Choices</h2>
+                        <p>Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam,
+                            Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    </div>
+
+    <!-- End About -->
+
+    <!-- Start Clients -->
+
+    <div class="clients" id="client">
+        <h1>Our Clients</h1>
+        <div class="container">
+            <div class="client">
+                <div class="image">
+                    <img src="{{url_for('static',filename='images/client1.webp')}}" ,alt="client1">
+                </div>
+                <p>Tasty And Fresh Meals,I liKe Work Staff </p>
+            </div>
+
+            <div class="client">
+                <div class="image">
+                    <img src="{{url_for('static',filename='images/client2.webp')}}" ,alt="client2">
+                </div>
+                <p>I Like Their Respect For Appointments,And Their Accept Criticism </p>
+            </div>
+
+            <div class="client">
+                <div class="image">
+                    <img src="{{url_for('static',filename='images/client3.webp')}}" , alt="client3">
+                </div>
+                <p>There Are Multiple Choices Of Meals,Spicy Food And Fresh Juice</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Clients -->
+
+
+
+    <!-- Start Footer -->
+
+    <footer id="contact">
+        <div class="container">
+            <p>2019 &copy; FoodEat. All Rights Reserved. Designed And Coded By Coding Team For <span>Coretabs</span>
+                Competition</p>
+            <ul class="links">
+                <li><i class="fab fa-facebook-square fa-2x"></i></li>
+                <li><i class="fab fa-twitter-square fa-2x"></i></li>
+                <li><i class="fab fa-linkedin fa-2x"></i></li>
+                <li><i class="fab fa-google-plus-square fa-2x"></i></li>
+                <li><i class="fas fa-phone-square fa-2x"></i></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+
+    <script src="{{url_for('static',filename='js/jquery3.4.1.js')}}"></script>
+    <script src="{{url_for('static',filename='js/admin orders.js')}}"></script>
+
+</body>
+
+</html>

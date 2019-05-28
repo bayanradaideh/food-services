@@ -1,0 +1,31 @@
+.menu {
+    padding: 7% 0
+}
+
+.menu .back-add {
+    padding: 1% 2%;
+    border: 1px solid #ffb701;
+    background-color: #ffb701;
+    display: inline-block;
+    margin-bottom: 1%;
+    border-radius: 10px;
+}
+
+.menu .back-add a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.9);
+    font-family: cursive,sans-serif
+}
+
+.menu .meal .edit a {
+    text-decoration: none;
+    color: #333;
+    
+}
+
+
+.menu .meal .delete {
+    background: #ddd !important;
+    color: #333 !important;
+    border: 1px solid transparent !important
+}
